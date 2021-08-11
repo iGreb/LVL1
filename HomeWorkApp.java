@@ -1,52 +1,54 @@
-package ru.geekbrains.j1l1;
+package ru.geekbrains.j1l2;
 
 public class HomeWorkApp {
     public static void main(String[] args) {
-        printThreeWords();
-        checkSumSign();
-        printColor();
-        compareNumbers();
-        System.out.println("Длина гипотенузы треугольника равна " + getHypotenuseLength());
+        fromTenToTwenty(5, 15);
+        positiveNegative(-1);
+        trueOrFalse(10);
+        wordAndNumber("Name", 3);
+        leapYear(1984);
     }
 
-    public static void printThreeWords() {
-        System.out.println("Orange");
-        System.out.println("Banana");
-        System.out.println("Apple");
-    }
-
-    public static void checkSumSign() {
-        int a = 10, b = 43, sum = a - b;
-        if (sum >= 0) {
-            System.out.println("Сумма положительная");
+    public static boolean fromTenToTwenty(int a, int b) {
+        if(a + b >= 10 && a + b <= 20) {
+            System.out.println(true);
+            return true;
         } else {
-            System.out.println("Сумма отрицательная");
+            System.out.println(false);
+            return false;
         }
     }
 
-    public static void printColor() {
-        int value = -50;
-        if (value <= 0) {
-            System.out.println("Красный");
-        } else if (value > 0 && value <= 100) {
-            System.out.println("Жёлтый");
+    public static void positiveNegative(int a) {
+        if(a < 0) {
+            System.out.println("Число отрицательное");
         } else {
-            System.out.println("Зелёный");
+            System.out.println("Число положительное");
+        }
+
+    }
+
+    public static boolean trueOrFalse(int a) {
+        if(a < 0) {
+            System.out.println(true);
+            return true;
+        } else {
+            System.out.println(false);
+            return false;
         }
     }
 
-    public static void compareNumbers() {
-        int a = 155, b = 56;
-        if (a >= b) {
-            System.out.println("a >= b");
-        }
-        if (a < b) {
-            System.out.println("a < b");
+    public static void wordAndNumber(String word, int number) {
+        for(int a = 0; a < number; a++) {
+            System.out.println(word);
         }
     }
 
-    public static double getHypotenuseLength() {
-        double a = 12.65, b = 31.47, c = Math.sqrt((a * a) + (b * b));
-        return c;
+    public static void leapYear(int year) {
+        if(year % 400 == 0 || year % 4 == 0 && year % 100 != 0) {
+            System.out.println(true);
+        } else {
+            System.out.println(false);
+        }
     }
 }
